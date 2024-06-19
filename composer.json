@@ -1,0 +1,16 @@
+{
+    "require": {
+        "symfony/process": "^6.3||^7",
+        "phpunit/phpunit": "^11.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Test\\": "src/"
+        }
+    },
+    "config": {
+        "audit": {
+            "abandoned": "report"
+        }
+    }
+}
