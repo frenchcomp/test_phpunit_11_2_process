@@ -11,7 +11,12 @@ class Issue
         $this->stop(0);
     }
 
-    public function setWorkingDirectory(string $cwd): static
+    public function callWithStaticAsReturnType(string $cwd): static
+    {
+        return $this;
+    }
+
+    public function callWithSelfAsReturnType(string $cwd): self
     {
         return $this;
     }

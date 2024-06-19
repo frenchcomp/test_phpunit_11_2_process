@@ -13,9 +13,18 @@ class IssueTest extends TestCase
     {
         $p = $this->createMock(Issue::class);
 
+        $p->expects($this->any())
+            ->method('stop')
+            ->willReturn(0);
+
         self::assertInstanceOf(
             Issue::class,
-            $p->setWorkingDirectory("foo"),
+            $p->callWithSelfAsReturnType("foo"),
+        );
+
+        self::assertInstanceOf(
+            Issue::class,
+            $p->callWithStaticAsReturnType("foo"),
         );
     }
 }
